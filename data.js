@@ -1,6 +1,3 @@
-var express = require('express');
-var app = express();
-var data = require('./data.js');
 var collection = [
         {
             quote:"What one programmer can do in one month, two programmers can do in two months.",
@@ -25,7 +22,7 @@ var collection = [
                 {
             quote:"No one in the brief history of computing has ever written a piece of perfect software. It's unlikely that you'll be the first.",
             author: "Andy Hunt", 
-            image: "images/hunt.jpg"
+            image: "images/ullman.jpg"
         },
                 {
             quote:"We build our programs the way we build our cities: over time, without a plan, on top of ruins.",
@@ -51,25 +48,3 @@ var collection = [
         }
        
     ];
-
-app.use(express.static(__dirname + "/public"));
-
-app.get('/api/quotes', function (req, res) {
-
-  res.send(collection);
-});
-
-
-app.get('/api/random-quote', function (req, res) {
-
-    var randomized = collection[Math.floor(Math.random() * collection.length)];
-    console.log(randomized);
-
-  res.send(randomized);
-});
-
-
-app.listen(8080, function () {
-  console.log('Server running on Port 8080!');
-});
-
