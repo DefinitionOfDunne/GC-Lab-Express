@@ -7,7 +7,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 </head>
 <body ng-app="quoteApp" ng-controller="quoteController">
-<h1>{{quote}}</h1>
+<h1>"{{quote.quote}}"</h1>
+<img ng-src="{{quote.image}}">
+<h3>-{{quote.author}}</h3>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
